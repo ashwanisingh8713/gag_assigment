@@ -53,21 +53,21 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
         mApiManager = new ApiManager(this);
         mApiManager.fetchProduct();
 
-        binding.quantityParent.setOnClickListener(v->{
+        binding.quantityParent.setOnClickListener(v -> {
             showMiniCart();
         });
 
-        binding.btnRefresh.setOnClickListener(v->{
+        binding.btnRefresh.setOnClickListener(v -> {
             progressBarVisibility(View.VISIBLE);
             refreshVisibility(View.GONE);
             mApiManager.fetchProduct();
         });
 
-        binding.txtCartBadge.setOnClickListener(v->{
+        binding.txtCartBadge.setOnClickListener(v -> {
             Intent intent = new Intent(this, CartActivity.class);
             startActivity(intent);
         });
-        binding.imgIconBadge.setOnClickListener(v->{
+        binding.imgIconBadge.setOnClickListener(v -> {
             Intent intent = new Intent(this, CartActivity.class);
             startActivity(intent);
         });
@@ -80,14 +80,14 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
     protected void onResume() {
         super.onResume();
         mDisposable.add(DataManager.combineProductCartData(mProductList)
-                .map(productList->productList)
+                .map(productList -> productList)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::onSuccess));
     }
 
     private void showMiniCart() {
         MiniCartFragment blankFragment = MiniCartFragment.getInstance(mProductList, mCurrentIndex);
-        blankFragment.show(getSupportFragmentManager(),blankFragment.getTag());
+        blankFragment.show(getSupportFragmentManager(), blankFragment.getTag());
         blankFragment.setOnProductCartListener(this);
     }
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
 
     @Override
     public void onSuccess(List<ProductAttribute> productList) {
-        if(productList.size() > 0) {
+        if (productList.size() > 0) {
             mProductList = new ArrayList<>(productList);
             showProductData(productList.get(mCurrentIndex));
         }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
     public void onFailed(Throwable e) {
         progressBarVisibility(View.GONE);
         refreshVisibility(View.VISIBLE);
-        ErrorDialog.showErrorDialog(getSupportFragmentManager(), "!! ERROR !!",  e.getMessage());
+        ErrorDialog.showErrorDialog(getSupportFragmentManager(), "!! ERROR !!", e.getMessage());
     }
 
     @Override
@@ -133,11 +133,11 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
         Locale ind = new Locale("en", "IN");
         NumberFormat dollarFormat = NumberFormat.getCurrencyInstance(ind);
 
-        if(sPrice == null || sPrice.intValue() == 0) {
+        if (sPrice == null || sPrice.intValue() == 0) {
             binding.txtSpecialPrice.setVisibility(View.GONE);
             binding.txtPrice.setText(dollarFormat.format(price));
             binding.txtPrice.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-            binding.txtPrice.setPadding(0,0,0,0);
+            binding.txtPrice.setPadding(0, 0, 0, 0);
         } else {
             binding.txtSpecialPrice.setVisibility(View.VISIBLE);
             binding.txtSpecialPrice.setText(dollarFormat.format(sPrice));
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
             binding.txtPrice.setText(dollarFormat.format(price));
             binding.txtPrice.setPaintFlags(binding.txtPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             binding.txtPrice.setTextColor(Color.RED);
-            binding.txtPrice.setPadding((int)getResources().getDimension(R.dimen.content_inbetween_gap),0,0,0);
+            binding.txtPrice.setPadding((int) getResources().getDimension(R.dimen.content_inbetween_gap), 0, 0, 0);
         }
 
 
@@ -153,15 +153,17 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
 
         updateAddBtn(product.getSelectedCount());
 
-        binding.btnAdd.setOnClickListener(v->{
+        binding.btnAdd.setOnClickListener(v -> {
             updateSelectedCount(product, true);
         });
 
-        binding.btnMinus.setOnClickListener(v->{
-            updateSelectedCount(product, false);
+        binding.btnMinus.setOnClickListener(v -> {
+            int newCount = product.getSelectedCount() - 1;
+            if (newCount >= 0)
+                updateSelectedCount(product, false);
         });
 
-        binding.btnPlus.setOnClickListener(v->{
+        binding.btnPlus.setOnClickListener(v -> {
             updateSelectedCount(product, true);
         });
     }
@@ -187,10 +189,10 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
 
     private void updateSelectedCount(ProductAttribute product, boolean shouldIncreaseCount) {
         int selectedCount = product.getSelectedCount();
-        if(shouldIncreaseCount) {
-            selectedCount = selectedCount+1;
+        if (shouldIncreaseCount) {
+            selectedCount = selectedCount + 1;
         } else {
-            selectedCount = selectedCount-1;
+            selectedCount = selectedCount - 1;
         }
         product.setSelectedCount(selectedCount);
         updateAddBtn(product.getSelectedCount());
@@ -219,8 +221,8 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
 
 
     private void badgeUpdate(int badge) {
-        if(badge > 0) {
-            binding.txtCartBadge.setText(""+badge);
+        if (badge > 0) {
+            binding.txtCartBadge.setText("" + badge);
             binding.txtCartBadge.setVisibility(View.VISIBLE);
         } else {
             binding.txtCartBadge.setVisibility(View.GONE);
@@ -229,14 +231,13 @@ public class MainActivity extends AppCompatActivity implements OnResponse, OnPro
 
     private void showCartData() {
         mDisposable.add(DataManager.getCartAllProduct()
-                .map(products-> products)
+                .map(products -> products)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(products-> {
+                .subscribe(products -> {
                             badgeUpdate(products.size());
                         }
                 ));
     }
-
 
 
 }

@@ -82,6 +82,8 @@ public class CartAdapter extends RecyclerView.Adapter {
         });
 
         cartHolder.itemBinding.btnMinus.setOnClickListener(v->{
+            int newCount = cartTable.getSelectedCount() - 1;
+            if (newCount >= 0)
             updateSelectedCount((cartTable.getSelectedCount()-1), position);
         });
 
