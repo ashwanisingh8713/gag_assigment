@@ -1,0 +1,160 @@
+{
+  "custom_attributes": [
+    {
+      "attribute_code": "image",
+      "value": "/6/2/6291030200070_2.jpg"
+    },
+    {
+      "attribute_code": "url_key",
+      "value": "al-rawabi-full-cream-milk-1gal0070"
+    },
+    {
+      "attribute_code": "special_price",
+      "value": "20.000000"
+    },
+    {
+      "attribute_code": "gift_message_available",
+      "value": "0"
+    },
+    {
+      "attribute_code": "am_recurring_enable",
+      "value": "no"
+    },
+    {
+      "attribute_code": "erp_description",
+      "value": "Al Rawabi Full Cream Milk 1GAL"
+    },
+    {
+      "attribute_code": "small_image",
+      "value": "/6/2/6291030200070_2.jpg"
+    },
+    {
+      "attribute_code": "meta_title",
+      "value": "Al Rawabi Full Cream Milk - Grandiose.ae"
+    },
+    {
+      "attribute_code": "special_from_date",
+      "value": "2022-06-24 00:00:00"
+    },
+    {
+      "attribute_code": "options_container",
+      "value": "container2"
+    },
+    {
+      "attribute_code": "am_subscription_only",
+      "value": "1"
+    },
+    {
+      "attribute_code": "ignore_erp_price",
+      "value": "0"
+    },
+    {
+      "attribute_code": "search_tags",
+      "value": "Search Tags"
+    },
+    {
+      "attribute_code": "thumbnail",
+      "value": "/6/2/6291030200070_2.jpg"
+    },
+    {
+      "attribute_code": "ignore_erp_qty",
+      "value": "0"
+    },
+    {
+      "attribute_code": "cost",
+      "value": "17.500000"
+    },
+    {
+      "attribute_code": "erp_loose_item",
+      "value": "0"
+    },
+    {
+      "attribute_code": "erp_item_no",
+      "value": "117265"
+    },
+    {
+      "attribute_code": "erp_uom",
+      "value": "PCS"
+    },
+    {
+      "attribute_code": "msrp_display_actual_price_type",
+      "value": "0"
+    },
+    {
+      "attribute_code": "qty_per_uom",
+      "value": "1"
+    },
+    {
+      "attribute_code": "tax_class_id",
+      "value": "2"
+    },
+    {
+      "attribute_code": "erp_scale_item",
+      "value": "0"
+    },
+    {
+      "attribute_code": "erp_pack_info",
+      "value": "5"
+    },
+    {
+      "attribute_code": "required_options",
+      "value": "0"
+    },
+    {
+      "attribute_code": "ts_packaging_type",
+      "value": "none"
+    },
+    {
+      "attribute_code": "has_options",
+      "value": "0"
+    },
+    {
+      "attribute_code": "category_ids",
+      "value": [
+        "57",
+        "201",
+        "604"
+      ]
+    },
+    {
+      "attribute_code": "new",
+      "value": "0"
+    },
+    {
+      "attribute_code": "country_of_origin",
+      "value": "5688"
+    },
+    {
+      "attribute_code": "ts_country_of_origin",
+      "value": "AE"
+    },
+    {
+      "attribute_code": "is_promotions",
+      "value": "0"
+    },
+    {
+      "attribute_code": "featured",
+      "value": "0"
+    },
+    {
+      "attribute_code": "best_seller",
+      "value": "0"
+    },
+    {
+      "attribute_code": "manufacturer",
+      "value": "6349"
+    },
+    {
+      "attribute_code": "pack_weight_info",
+      "value": "1 Gallon / bottle"
+    },
+    {
+      "attribute_code": "aisle_number",
+      "value": "ZA"
+    },
+    {
+      "attribute_code": "shop_item",
+      "value": "1"
+    }
+  ]
+}

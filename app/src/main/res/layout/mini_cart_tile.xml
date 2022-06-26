@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/minicartTile"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+    <!-- Quantity, Start  -->
+    <TextView
+        android:id="@+id/txt_Quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minicart_content_inbetween_gap"
+        android:layout_marginEnd="@dimen/content_inbetween_gap"
+        android:layout_marginStart="@dimen/minicart_content_inbetween_gap"
+        android:text="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/minusPlus_frame"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Quantity, End  -->
+
+    <!-- Price, Start  -->
+    <LinearLayout
+        android:id="@+id/price_parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minicart_content_inbetween_gap"
+        android:layout_marginEnd="@dimen/content_inbetween_gap"
+        android:layout_marginStart="@dimen/minicart_content_inbetween_gap"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Quantity">
+
+        <TextView
+            android:id="@+id/txt_specialPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Special Price" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textColor="@color/price_texColor"/>
+
+    </LinearLayout>
+    <!-- Price, End  -->
+
+    <!-- Add Btns, Start -->
+    <FrameLayout
+        android:id="@+id/minusPlus_frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/content_inbetween_gap"
+        android:layout_marginEnd="@dimen/minicart_content_inbetween_gap"
+        app:layout_constraintBottom_toBottomOf="@+id/price_parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:id="@+id/minusPlus_parent"
+            android:layout_width="@dimen/add_btn_width"
+            android:layout_height="@dimen/add_btn_height"
+            android:background="@drawable/button_minus_plus"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_minus"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="@dimen/minus_txt_size"
+                android:textColor="@color/button_unsel"
+                android:background="@null"/>
+
+            <TextView
+                android:id="@+id/txt_manual_quanatity"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/quantity_text_bg"
+                android:text="1"
+                android:textSize="@dimen/title_size"
+                android:gravity="center"
+                android:textColor="@color/btn_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_plus"
+                android:layout_width="33dp"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textSize="@dimen/plus_txt_size"
+                android:textColor="@color/button_unsel"
+                android:background="@null"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Add"
+            android:layout_width="@dimen/add_btn_width"
+            android:layout_height="@dimen/add_btn_height"
+            android:background="@drawable/button"
+            android:text="@string/add_Btn"
+            android:textColor="@color/btn_text"
+            />
+    </FrameLayout>
+    <!-- Add Btns, End -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "592263212861",
+    "project_id": "gag-assignment",
+    "storage_bucket": "gag-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592263212861:android:998ac7bf5e00678cdcdf54",
+        "android_client_info": {
+          "package_name": "com.gag.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592263212861-u3kae667ghkrmm23nmlbqg8pg6ece24f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxt7lo_XvrG5gUPPQyuDj-ikmK8VE4DgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592263212861-u3kae667ghkrmm23nmlbqg8pg6ece24f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk 32
+
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.gag.assignment"
+        minSdk 27
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", "\"https://uat.grandiose.ae/rest/V1/\""
+        buildConfigField "String", "AUTH", "\"Bearer 3ogqzxcpd6teaww79puqjiibgbcy11a1\""
+        buildConfigField "String", "IMG_PREFIX", "\"https://uat.grandiose.ae/media/catalog/product\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+
+    implementation "com.google.code.gson:gson:2.8.9"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.21"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //If you are using Apple M1 chip
+    implementation "androidx.room:room-runtime:2.4.2"
+    annotationProcessor "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-rxjava2:2.4.2"
+
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+
+
+    implementation 'com.facebook.android:facebook-android-sdk:14.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.5'
+
+
+}

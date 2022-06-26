@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GAG Assignment</string>
+    <string name="cart">Product Cart</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login / Sign up</string>
+    <string name="add_Btn">Add</string>
+    <string name="refresh_Btn">Refresh</string>
+
+    <string name="facebook_app_id">1030338017648583</string>
+    <string name="fb_login_protocol_scheme">fb1030338017648583</string>
+    <string name="facebook_client_token">617a21ef53cf5a6825cc78795d146cc5</string>
+
+</resources>

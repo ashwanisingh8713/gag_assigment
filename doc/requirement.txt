@@ -1,0 +1,38 @@
+
+
+Develop an apk for Facebook Login
+Consume below 2 product api to display product in apk
+Display Product name , Image , price , special price
+
+
+Special price should display only if exist , and price should display as strike with red font if special price exists.
+
+Implement add to cart with + and - and save cart data into internal storage.
+
+On click on add to cart there should be mini cart with increase / decrease count of qty add to cart
+
+Display cart page from internal storage with item added to cart
+API : https://uat.grandiose.ae/rest/V1/products/6291030200070
+
+https://uat.grandiose.ae/rest/V1/products/6291030200049
+
+
+Bearer token : 3ogqzxcpd6teaww79puqjiibgbcy11a1
+
+Image Path Prefix  : https://uat.grandiose.ae/media/catalog/product
+
+
+
+Image                       : getThumbnail()
+Display Product name        : getTitle()
+price                       : getPrice()
+special price               : getSpecialPrice()
+
+
+
+
+
+
+
+https://uat.grandiose.ae/media/catalog/product/6/2/6291030200049_2.jpg
+https://uat.grandiose.ae/media/catalog/product/6/2/6291030200070_2.jpg

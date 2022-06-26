@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        android:background="@color/toolbar_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/content_start_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/minus_txt_size"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/content_inbetween_gap"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_icon_badge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_shopping_cart_white_48dp" />
+
+
+                <TextView
+                    android:id="@+id/txt_cart_badge"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    android:layout_gravity="right|end|top"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/rounded_corner"
+                    android:gravity="center"
+                    android:padding="1dp"
+                    android:textColor="@color/white"
+                    tools:text="10"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="13sp"/>
+
+
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_parent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="top"
+            android:layout_margin="@dimen/tile_margin"
+            android:background="@drawable/tile_outline"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:padding="@dimen/tile_padding"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imgCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/productImg"
+                    android:layout_width="@dimen/product_img_width"
+                    android:layout_height="@dimen/product_img_height"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txt_Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_start_margin"
+                android:layout_marginEnd="@dimen/content_margin_end"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="Title"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/imgCard"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <FrameLayout
+                android:id="@+id/quantity_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_inbetween_gap"
+                android:layout_marginTop="@dimen/content_inbetween_gap"
+                android:layout_marginEnd="@dimen/content_margin_end"
+                android:background="@drawable/dropdown_outline"
+                app:layout_constraintLeft_toRightOf="@+id/imgCard"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_Title">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="true"
+                    android:clipToPadding="true"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txt_Quantity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/icon_dropdown"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="1" />
+
+                    <ImageView
+                        android:id="@+id/icon_dropdown"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/drop_down"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/price_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_inbetween_gap"
+                android:layout_marginTop="@dimen/content_inbetween_gap"
+                android:layout_marginEnd="@dimen/content_margin_end"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@+id/imgCard"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quantity_parent">
+
+                <TextView
+                    android:id="@+id/txt_specialPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Special Price" />
+
+                <TextView
+                    android:id="@+id/txt_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/content_inbetween_gap"
+                    android:text="Price" />
+
+            </LinearLayout>
+
+            <!-- Add Btns, Start -->
+            <FrameLayout
+                android:layout_width="@dimen/add_btn_width"
+                android:layout_height="@dimen/add_btn_height"
+                android:layout_marginTop="@dimen/content_inbetween_gap"
+                android:layout_marginEnd="@dimen/content_margin_end"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_parent">
+
+                <LinearLayout
+                    android:id="@+id/minusPlus_parent"
+                    android:layout_width="@dimen/add_btn_width"
+                    android:layout_height="@dimen/add_btn_height"
+                    android:background="@drawable/button_minus_plus"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus"
+                        android:layout_width="33dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:text="-"
+                        android:textColor="@color/button_unsel"
+                        android:textSize="@dimen/minus_txt_size" />
+
+                    <TextView
+                        android:id="@+id/txt_manual_quanatity"
+                        android:layout_width="33dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/quantity_text_bg"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/btn_text"
+                        android:textSize="@dimen/title_size" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus"
+                        android:layout_width="33dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:text="+"
+                        android:textColor="@color/button_unsel"
+                        android:textSize="@dimen/plus_txt_size" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_Add"
+                    android:layout_width="@dimen/add_btn_width"
+                    android:layout_height="@dimen/add_btn_height"
+                    android:background="@drawable/button"
+                    android:text="@string/add_Btn"
+                    android:textColor="@color/btn_text" />
+            </FrameLayout>
+            <!-- Add Btns, End -->
+
+            <!--<androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Add"
+                android:layout_width="@dimen/add_btn_width"
+                android:layout_height="@dimen/add_btn_height"
+                android:layout_marginStart="@dimen/content_inbetween_gap"
+                android:layout_marginTop="@dimen/content_inbetween_gap"
+                android:layout_marginEnd="@dimen/content_inbetween_gap"
+                android:background="@drawable/button"
+                android:text="@string/add_Btn"
+                android:textColor="@color/white"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_parent" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    ProgressBar, Refresh Button -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_refresh"
+                android:layout_width="@dimen/add_btn_width"
+                android:layout_height="@dimen/add_btn_height"
+                android:background="@drawable/button"
+                android:text="@string/refresh_Btn"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
